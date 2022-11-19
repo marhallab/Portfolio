@@ -1,5 +1,14 @@
 import { createApp } from 'vue'
-import './style.css'
+import '@/static/styles/main.scss'
 import App from './App.vue'
+import router from './routes.js'
+import VueTyper from 'vue3-typer'
+import "vue3-typer/dist/vue-typer.css"
+import * as Scrambler from 'scramblejs'
 
-createApp(App).mount('#app')
+
+const app = createApp(App);
+app.use(router);
+app.use(VueTyper);
+app.use(Scrambler);
+app.mount('#app');

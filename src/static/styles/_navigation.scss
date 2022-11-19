@@ -1,0 +1,99 @@
+@import "variables", "functions";
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: sticky;
+    width: 10rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: $primary;
+    transition: 0.25s width ease-in;
+
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
+
+    &:hover {
+        width: 25rem;
+        transition: 0.25s width ease-in;
+
+        .navbar__item {
+            p {
+                display: block;
+            }
+        }
+
+        .navbar__arrow {
+            p {
+                display: block;
+            }
+        }
+    }
+
+    &__item {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        cursor: pointer;
+        margin-left: 2rem;
+
+        &+& {
+            margin-top: 1rem;
+        }
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0 toRem(5) toRem(15);
+        }
+
+        svg {
+            width: 2rem;
+            min-width: 2rem;
+            fill: white;
+        }
+
+        p {
+            margin-left: 1rem;
+            text-transform: uppercase;
+            display: none;
+            font-family: "Lato";
+            font-weight: 700;
+        }
+
+    }
+
+    &__logo {
+        font-size: toRem(40);
+        box-shadow: rgba(0, 0, 0, 0.5) 0 toRem(5) toRem(15);
+        padding: 2rem 0rem;
+        background-color: $primary-dark;
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        padding: 0.5rem;
+        margin-left: 3rem;
+
+        svg {
+            width: 3rem;
+            min-width: 3rem;
+            height: 4rem;
+            min-height: 4rem;
+        }
+
+        p {
+            display: none;
+            font-family: "Lato";
+            font-weight: 700;
+        }
+    }
+}

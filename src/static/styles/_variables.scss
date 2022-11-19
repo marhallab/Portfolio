@@ -1,0 +1,50 @@
+@import "functions";
+
+/** colors **/
+
+$primary-dark: #0945B1;
+$primary: #1463F3;
+$secondary: #737CCF;
+
+$bg-body: #f5f7fa;
+
+/** Fonts **/
+
+// Lato Font
+@font-face {
+    font-family: 'Lato';
+    font-weight: 400;
+    src: url(@/assets/fonts/lato/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 700;
+    src: url(@/assets/fonts/lato/Lato-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 900;
+    src: url(@/assets/fonts/lato/Lato-Black.ttf) format('truetype');
+}
+
+// Merriweather Font
+
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: 400;
+    src: url(@/assets/fonts/merriweather/Merriweather-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    src: url(@/assets/fonts/merriweather/Merriweather-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: 900;
+    src: url(@/assets/fonts/merriweather/Merriweather-Black.ttf) format('truetype');
+}

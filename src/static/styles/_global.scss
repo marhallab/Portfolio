@@ -1,0 +1,61 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+}
+
+main {
+    background-color: $bg-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 1rem 0rem 2rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: toRem(40);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: toRem(32);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: toRem(20);
+    line-height: 2.2rem;
+}
+
+.color-primary {
+    color: $primary;
+}
+
+.color-secondary {
+    color: $secondary;
+}
+
+/*BUTTONS*/
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 1rem 2.5rem 1rem;
+    border-radius: 2rem;
+    background-color: $primary;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    &:hover {
+        background-color: $primary-dark;
+    }
+}

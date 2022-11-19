@@ -1,0 +1,30 @@
+@import "variables";
+
+.home {
+    max-width: 1440px;
+    margin: auto;
+
+    &__portrait {
+        box-shadow: rgba(0, 0, 0, 0.5) 0 toRem(25) toRem(15);
+        min-width: 15rem;
+    }
+
+    &__headertext {
+        span {
+            color: $primary !important;
+            white-space: nowrap;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+
+    &__skill {
+        margin: 1rem toRem(45);
+        text-align: center;
+
+        img {
+            width: 45px;
+            height: 45px
+        }
+    }
+}
