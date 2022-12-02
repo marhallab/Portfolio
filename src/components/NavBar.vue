@@ -6,23 +6,23 @@
                     <HomeIcon/>
                     <p>Home</p>
                 </router-link>
-                <router-link to="#skills" class="navbar__item">
-                    <SkillIcon/>
-                    <p>Skills</p>
-                </router-link>
+
                 <router-link to="#about" class="navbar__item">
                     <AboutIcon/>
                     <p>About</p>
                 </router-link>
+
                 <router-link to="#skills" class="navbar__item">
-                    <WorkIcon/>
-                    <p>Experiences</p>
+                    <SkillIcon/>
+                    <p>Skills</p>
                 </router-link>
-                <router-link to="#skills" class="navbar__item">
+
+                <router-link to="#projects" class="navbar__item">
                     <ProjectIcon/>
                     <p>Projects</p>
                 </router-link>
-                <router-link to="#skills" class="navbar__item">
+
+                <router-link to="#contact" class="navbar__item">
                     <ContactIcon/>
                     <p>Contact</p>
                 </router-link>
@@ -34,6 +34,7 @@
                 </div>
             </div>
     </aside>
+
 </template>
 
 <script setup lang="ts">

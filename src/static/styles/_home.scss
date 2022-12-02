@@ -4,6 +4,7 @@
     max-width: 1440px;
     margin: auto;
 
+
     &__portrait {
         box-shadow: rgba(0, 0, 0, 0.5) 0 toRem(25) toRem(15);
         min-width: 15rem;
@@ -25,6 +26,16 @@
         img {
             width: 45px;
             height: 45px
+        }
+    }
+
+    &__link {
+        height: 30px;
+
+        &:hover {
+
+            border-bottom: 5px solid $primary;
+
         }
     }
 }

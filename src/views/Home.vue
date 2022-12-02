@@ -1,23 +1,31 @@
 <template>
     <main class="w-full">
         <div class="home">
-            <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-28">
+            <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-16">
                 <img width="300" class="rounded-full home__portrait" src="@/assets/images/me.jpg" alt="">
                 <div class="lg:ml-28">
-                    <div id="text" class="font-black text-4xl whitespace-nowrap m-0 inline-block color-primary my-8 lg:w-72 uppercase ">MOHAMED RHALLAB</div>
-                    <div class="max-w-3xl h-80 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactif and responsive front-end websites and application</div>
+                    <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
+                    <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
                     <div class="flex justify-center items-center md:mt-6 lg:justify-start">
-                        <div>
+                        <div class="flex">
                             <div class="button">RESUME</div>
+                            <router-link to="#contact" class="ml-4 button">
+                                Contact
+                            </router-link>
                         </div>
-                        <div class="ml-6">
-                            <div class="button">TEST</div>
+                        <div class="ml-12 flex">
+                            <a href="">
+                                <img width="65" src="@/assets/images/socials/github.png" alt="Github logo">
+                            </a>
+                            <a href="">
+                                <img class="ml-4" width="65" src="@/assets/images/socials/linkedin.png" alt="Linkedin Logo">
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="about" class="my-28 px-6 lg:px-28">
+            <section id="about" class="my-28 px-6 lg:px-16">
                 <h2 id="test">About me</h2>
                 <div class="px-8 py-8 bg-white rounded-3xl">
                     <p class="">
@@ -27,13 +35,16 @@
                     <p>    
                         I'm a front-end web developer with a background in computer systems and network infrastructure. 
                         My 3 years of coding experience has given me a <span class="font-bold color-primary">strong foundation</span> for web development and building complex solutions. 
+                    </p>
+                    <br>
+                    <p>
                         Recently, I graduated from the <span class="font-bold color-primary">Juno College Immersive Web Development Bootcamp</span>.
                         I am passionate about coding and solving problems through code, and I am excited to work alongside other amazing programmers and learn so much more!
                     </p>
                 </div>
             </section>
 
-            <section id="skills" class="my-28 px-6 lg:px-28">
+            <section id="skills" class="my-28 px-6 lg:px-16">
                 <h2>My skills</h2>
                 <div class="px-8 py-8 bg-white rounded-3xl">
                     <div class="flex flex-wrap justify-center items-center">
@@ -41,6 +52,68 @@
                             <img :src="skill.icon" :alt="skill.name">
                             <p>{{skill.name}}</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="my-28 px-6 lg:px-16">
+                <h2>Projects i worked on:</h2>
+                <div class="mb-16 px-8 py-8 bg-white rounded-3xl" v-for="(project, idx) in projects" :key="idx">
+                        <div :class="idx % 2 == 0 ? 'flex flex-col justify-between items-center text-center lg:text-start lg:flex-row':'flex flex-col justify-between items-center text-center lg:text-end lg:flex-row-reverse'">
+                            <img :class="idx % 2 == 0 ? 'w-full lg:mr-8 lg:w-5/12' : 'w-full lg:ml-8 lg:w-5/12'" :src="project.image" :alt="project.name">
+                            <div class="w-full lg:w-7/12">
+                                <h2 class="font-black">{{project.name}}</h2>
+                                <div v-html="project.description"></div>
+                                <div>
+                                    <h3 class="uppercase text-xl">Made with :</h3>
+                                    <ul :class="idx % 2 == 0 ? 'flex flex-wrap justify-center lg:justify-start':'flex flex-wrap justify-center lg:justify-end'">
+                                        <li v-for="(techno, idx) in project.technologies" :key="idx" class="flex flex-col justify-center items-center">
+                                            <img width="50" :src="techno.icon" :alt="techno.name">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <div :class="idx % 2 == 0 ? 'flex justify-center lg:justify-start':'flex justify-center lg:justify-end'">
+                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-black home__link" :href="project.webLink">Live Site</a>
+                                        <span v-if="project.webLink !== '' && project.repoLink !== ''" class="mx-4 font-black">|</span>
+                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-black home__link" :href="project.repoLink">Repo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                    <a href="" class="my-28  uppercase color-primary font-black underline">
+                        <p class="text-2xl w-auto">Check my Githubfor more projects</p>
+                    </a> 
+            </section>
+
+            <section id="contact" class="my-28 px-6 lg:px-16">
+                <h2>Contact Me</h2>
+                <div class="flex flex-col items-center lg:flex-row mb-16 px-8 py-8 bg-white rounded-3xl mx-auto">
+                    <div class="lg:w-1/2">
+                        <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+                        <form action="#" class="space-y-8">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-bold">Your email</label>
+                                <input type="email" id="email" class="shadow-sm bg-gray-50 border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@medrhallab.com" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-2 text-sm font-bold">Subject</label>
+                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let me know how i can help you" required>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block mb-2 text-sm font-bold">Your message</label>
+                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                            </div>
+                            <button type="submit" class="py-3 px-5 text-sm font-bold text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+                        </form>
+                    </div>
+                    <div class="lg:w-1/2 lg:ml-12">
+                        <p>If you have any more questions, feel free to contact me!</p>
+                        <br>
+                        <p> I'm available to talk about your project or work and see if we can be a fit for each other!</p>
+                        <br>
+                        <p>Straight shot to my inbox: <a href="mailto:rhallab.dev@gmail.com" class="home__link -email font-black">rhallab.dev@gmail.com</a></p>
                     </div>
                 </div>
             </section>
@@ -90,6 +163,11 @@ const skills = ref([
     },
 
     {
+        name: "Django",
+        icon: "src/assets/images/skills/django.png"
+    },
+
+    {
         name: "Sass",
         icon: "src/assets/images/skills/sass.png"
     },
@@ -120,6 +198,11 @@ const skills = ref([
     },
 
     {
+        name: "Wordpress",
+        icon: "src/assets/images/skills/wordpress.png"
+    },
+
+    {
         name: "Responsive Design",
         icon: "src/assets/images/skills/responsive-design.png"
     },
@@ -129,7 +212,162 @@ const skills = ref([
         icon: "src/assets/images/skills/web-accessibility.png"
     },
 
-])
+]);
+const projects = ref([
+    // {
+    //     name: "",
+    //     description: "",
+    //     image: "",
+    //     technologies:[
+    //         {
+    //             name: "",
+    //             icon: ""
+    //         },
+    //     ],
+    //     webLink: "",
+    //     repoLink:"",
+    // },
+
+    {
+        name: "Journal de l'assurance",
+        description: "<p class='mb-6'>JDA is a nation wide renowed information source for profesionnal in the insurance industrie.</p><p class='mb-6'>With the objectives of transitionning the front-end from Django to a Vue envirement, i worked on optimisation, refractoring and creating multiple new applications and features on the main project.</p><p>From refractoring the dynamic event app to creating a new subscription flow with stripe, this is only the tip of the iceberg.</p>",
+        image: "src/assets/images/projects/jda.png",
+        technologies:[
+                {
+                    name: "HTML 5",
+                    icon: "src/assets/images/skills/html5.png"
+                },
+
+                {
+                    name: "CSS 3",
+                    icon: "src/assets/images/skills/css3.png"
+                },
+                {
+                    name: "SASS",
+                    icon: "src/assets/images/skills/sass.png"
+                },
+                {
+                    name: "JS",
+                    icon: "src/assets/images/skills/javascript.png"
+                },
+                
+                {
+                    name: "VUEJS",
+                    icon: "src/assets/images/skills/vuejs.png"
+                },
+
+                {
+                    name: "JQUERY",
+                    icon: "src/assets/images/skills/jquery.png"
+                },
+
+                {
+                    name: "DJANGO",
+                    icon: "src/assets/images/skills/django.png"
+                },
+
+                {
+                    name: "RESPONSIVENESS",
+                    icon: "src/assets/images/skills/responsive-design.png"
+                },
+
+                {
+                    name: "Web Accessibility",
+                    icon: "src/assets/images/skills/web-accessibility.png"
+                },
+
+        ],
+        webLink: "https://portail-assurance.ca/",
+        repoLink:""
+    },
+
+    {
+        name: "My personal Portfolio",
+        description: "<p class='mb-6'>Well yes, this very website is made by.... ME! Surprise!</p><p class='mb-6'>The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.</p><p class='mb-6'> As for the contact form, i'm using EmailJS to receive the emails from my code.</p> <p class='mb-6'>This website is deployed and hosted with netlify</p>",
+        image: "src/assets/images/projects/portfolio.png",
+        technologies:[
+                {
+                    name: "HTML 5",
+                    icon: "src/assets/images/skills/html5.png"
+                },
+                {
+                    name: "CSS 3",
+                    icon: "src/assets/images/skills/css3.png"
+                },
+                {
+                    name: "SASS",
+                    icon: "src/assets/images/skills/sass.png"
+                },
+                {
+                    name: "JS",
+                    icon: "src/assets/images/skills/javascript.png"
+                },
+
+                {
+                    name: "Tailwind",
+                    icon: "src/assets/images/skills/tailwind.png"
+                },
+
+                {
+                    name: "VUEJS",
+                    icon: "src/assets/images/skills/vuejs.png"
+                },
+
+                {
+                    name: "RESPONSIVENESS",
+                    icon: "src/assets/images/skills/responsive-design.png"
+                },
+
+                {
+                    name: "Seo",
+                    icon: "src/assets/images/skills/seo.png"
+                },
+
+                {
+                    name: "Web Accessibility",
+                    icon: "src/assets/images/skills/web-accessibility.png"
+                },
+
+        ],
+        webLink: "https://alfredtechnologies.com/",
+        repoLink:"https://github.com/marhallab/portfolio"
+    },
+
+    {
+        name: "Alfred Technologies",
+        description: "<p class='mb-6'>A website which serves as an initial introduction to the alfred management software. We used Vuejs and wordpress as a headless CMS.</p><p>I also added multiple new components created in the website to the UI-Kit used internally.</p>",
+        image: "src/assets/images/projects/alfred.png",
+        technologies:[
+                {
+                    name: "HTML 5",
+                    icon: "src/assets/images/skills/html5.png"
+                },
+                {
+                    name: "CSS 3",
+                    icon: "src/assets/images/skills/css3.png"
+                },
+                {
+                    name: "SASS",
+                    icon: "src/assets/images/skills/sass.png"
+                },
+                {
+                    name: "JS",
+                    icon: "src/assets/images/skills/javascript.png"
+                },
+                {
+                    name: "VUEJS",
+                    icon: "src/assets/images/skills/vuejs.png"
+                },
+                {
+                    name: "RESPONSIVENESS",
+                    icon: "src/assets/images/skills/responsive-design.png"
+                },
+
+        ],
+        webLink: "https://alfredtechnologies.com/",
+        repoLink:""
+    }
+]);
 
 onMounted(() => {
     scrambleSelector('name','Mohamed Rhallab', 3000);
