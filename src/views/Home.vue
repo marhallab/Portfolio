@@ -6,14 +6,14 @@
                 <div class="lg:ml-28">
                     <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
                     <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
-                    <div class="flex justify-center items-center md:mt-6 lg:justify-start">
+                    <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
                         <div class="flex">
                             <div class="button">RESUME</div>
                             <router-link to="#contact" class="ml-4 button">
                                 Contact
                             </router-link>
                         </div>
-                        <div class="ml-12 flex">
+                        <div class="md:ml-12 flex">
                             <a href="">
                                 <img width="65" src="@/assets/images/socials/github.png" alt="Github logo">
                             </a>
@@ -32,15 +32,15 @@
                         Hello world! my name is <span id="name" class="font-black whitespace-nowrap m-0 inline-block color-primary lg:w-48">Mohamed Rhallab</span>
                     </p>
                     <br>
-                    <p>    
-                        I'm a front-end web developer with a background in computer systems and network infrastructure. 
-                        My 3 years of coding experience has given me a <span class="font-bold color-primary">strong foundation</span> for web development and building complex solutions. 
+                    <p> My years of experience as a front-end developer has given me strong foundation for<span class="font-bold color-primary"> building accessible & user-friendly</span> websites and applications.
                     </p>
                     <br>
                     <p>
-                        Recently, I graduated from the <span class="font-bold color-primary">Juno College Immersive Web Development Bootcamp</span>.
-                        I am passionate about coding and solving problems through code, and I am excited to work alongside other amazing programmers and learn so much more!
+                        I had the chance to<span class="font-bold color-primary"> work in different enviroments</span> (as a solo dev, in a team of devs or handling the entirety of the front-end on my own) and on differents compagnies types (<span class="font-bold color-primary">web agency & Saas</span>) which 
+                        has given me a 360-view on the works of a web developer. 
                     </p>
+                    <br>
+                    <p>I am passionate about coding and solving problems through code, and I am excited to work with you!</p>
                 </div>
             </section>
 
@@ -64,19 +64,20 @@
                             <div class="w-full lg:w-7/12">
                                 <h2 class="font-black">{{project.name}}</h2>
                                 <div v-html="project.description"></div>
-                                <div>
-                                    <h3 class="uppercase text-xl">Made with :</h3>
+                                <div class="mt-6">
+                                    <h3 class="uppercase text-xl underline font-black">Made with :</h3>
                                     <ul :class="idx % 2 == 0 ? 'flex flex-wrap justify-center lg:justify-start':'flex flex-wrap justify-center lg:justify-end'">
                                         <li v-for="(techno, idx) in project.technologies" :key="idx" class="flex flex-col justify-center items-center">
                                             <img width="50" :src="techno.icon" :alt="techno.name">
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="mt-8">
+                                <div class="mt-6">
+                                    <h3 class="uppercase text-xl underline font-black">Links :</h3>
                                     <div :class="idx % 2 == 0 ? 'flex justify-center lg:justify-start':'flex justify-center lg:justify-end'">
-                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-black home__link" :href="project.webLink">Live Site</a>
+                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.webLink">Live Site</a>
                                         <span v-if="project.webLink !== '' && project.repoLink !== ''" class="mx-4 font-black">|</span>
-                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-black home__link" :href="project.repoLink">Repo</a>
+                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.repoLink">Repo</a>
                                     </div>
                                 </div>
                             </div>
@@ -89,31 +90,36 @@
 
             <section id="contact" class="my-28 px-6 lg:px-16">
                 <h2>Contact Me</h2>
-                <div class="flex flex-col items-center lg:flex-row mb-16 px-8 py-8 bg-white rounded-3xl mx-auto">
-                    <div class="lg:w-1/2">
-                        <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-                        <form action="#" class="space-y-8">
+                <div class="flex flex-col items-center lg:items-start lg:flex-row mb-16 px-8 py-8 bg-white rounded-3xl mx-auto">
+                    <div class="w-full lg:w-1/2">
+                        <form ref="formContact" @submit.prevent="sendMail" class="space-y-8">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-bold">Your email</label>
-                                <input type="email" id="email" class="shadow-sm bg-gray-50 border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@medrhallab.com" required>
+                                <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@medrhallab.com" required>
                             </div>
                             <div>
-                                <label for="subject" class="block mb-2 text-sm font-bold">Subject</label>
-                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let me know how i can help you" required>
+                                <label for="subject" class="block mb-2 text-sm font-bold">Your name</label>
+                                <input type="text" id="subject" name="name" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Med Rhallab" required>
                             </div>
                             <div class="sm:col-span-2">
                                 <label for="message" class="block mb-2 text-sm font-bold">Your message</label>
-                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                                <textarea id="message" rows="6" name="message" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Let me know how i can help you" required></textarea>
                             </div>
-                            <button type="submit" class="py-3 px-5 text-sm font-bold text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+                            <button type="submit" class="py-3 px-5 text-sm font-bold text-center button flex justify-center items-center" style="width:200px; height:50px;">
+                                <svg v-if="(sendingMessage === true)" class="inline mr-2 w-8 h-8 text-white-200 animate-spin dark:text-white-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                                </svg>
+                                <div v-else>{{text.buttonSend}}</div>
+                            </button>
                         </form>
                     </div>
-                    <div class="lg:w-1/2 lg:ml-12">
+                    <div class="mt-12 lg:w-1/2 lg:ml-12 lg:mt-0">
                         <p>If you have any more questions, feel free to contact me!</p>
                         <br>
                         <p> I'm available to talk about your project or work and see if we can be a fit for each other!</p>
                         <br>
-                        <p>Straight shot to my inbox: <a href="mailto:rhallab.dev@gmail.com" class="home__link -email font-black">rhallab.dev@gmail.com</a></p>
+                        <p>Straight shot to my inbox: <a href="mailto:rhallab.dev@gmail.com" class="home__link -email font-black color-primary">rhallab.dev@gmail.com</a></p>
                     </div>
                 </div>
             </section>
@@ -124,12 +130,14 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import { scrambleSelector } from '@/static/scripts/Scrambler.js'
+import { onMounted, ref } from 'vue';
+import { scrambleSelector } from '@/static/scripts/Scrambler.js';
+import emailjs from 'emailjs-com';
 
-const text = ref({
+var text = ref({
     header: "A Frontend focused Web Developer who specialize on <VueTyper :text='textTyperHeader' :shuffle=true /> top-notch interactif and responsive front-end websites and applications",
-    typerHeader: ['creating', 'building','maintaining']
+    typerHeader: ['creating', 'building','maintaining'],
+    buttonSend: "Send Message"
 });
 const skills = ref([
     {
@@ -329,7 +337,7 @@ const projects = ref([
                 },
 
         ],
-        webLink: "https://alfredtechnologies.com/",
+        webLink: "#",
         repoLink:"https://github.com/marhallab/portfolio"
     },
 
@@ -368,6 +376,24 @@ const projects = ref([
         repoLink:""
     }
 ]);
+const formContact = ref(null);
+var sendingMessage = ref(false);
+
+
+const sendMail = () => {
+        sendingMessage.value = true;
+        emailjs.sendForm('service_b8lgk5a', 'template_8bhh8gr', formContact.value, 'CP2MistUV8Pzm9j0s')
+        .then(() => {
+            sendingMessage.value = false;
+            text.value.buttonSend = "Message sent"
+        }, () => {
+            sendingMessage.value = false;
+            text.value.buttonSend = "Message wasn't sent"
+
+        }); 
+      };
+
+
 
 onMounted(() => {
     scrambleSelector('name','Mohamed Rhallab', 3000);
