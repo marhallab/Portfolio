@@ -1,12 +1,12 @@
 <template>
     <main class="w-full">
-        <div class="home">
+        <div class="home page">
             <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-16">
                 <img width="300" class="rounded-full home__portrait" src="@/assets/images/me.jpg" alt="">
                 <div class="lg:ml-28">
                     <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
                     <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
-                    <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
+                       <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
                         <div class="flex">
                             <div class="button">RESUME</div>
                             <router-link to="#contact" class="ml-4 button">
@@ -14,10 +14,10 @@
                             </router-link>
                         </div>
                         <div class="md:ml-12 flex">
-                            <a href="">
+                            <a href="https://github.com/marhallab">
                                 <img width="65" src="@/assets/images/socials/github.png" alt="Github logo">
                             </a>
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/marhallab/">
                                 <img class="ml-4" width="65" src="@/assets/images/socials/linkedin.png" alt="Linkedin Logo">
                             </a>
                         </div>
@@ -83,9 +83,11 @@
                             </div>
                         </div>
                 </div>
-                    <a href="" class="my-28  uppercase color-primary font-black underline">
-                        <p class="text-2xl w-auto">Check my Githubfor more projects</p>
+                <div class="mb-28 text-center">
+                    <a href="" class="text-2xl w-auto uppercase color-primary font-black underline">
+                        Check my Githubfor more projects
                     </a> 
+                </div>
             </section>
 
             <section id="contact" class="my-28 px-6 lg:px-16">
@@ -238,7 +240,7 @@ const projects = ref([
 
     {
         name: "Journal de l'assurance",
-        description: "<p class='mb-6'>JDA is a nation wide renowed information source for profesionnal in the insurance industrie.</p><p class='mb-6'>With the objectives of transitionning the front-end from Django to a Vue envirement, i worked on optimisation, refractoring and creating multiple new applications and features on the main project.</p><p>From refractoring the dynamic event app to creating a new subscription flow with stripe, this is only the tip of the iceberg.</p>",
+        description: "<p class='mb-2'>JDA is a nation wide renowed information source for profesionnal in the insurance industrie.</p><p class='mb-2'>With the objectives of transitionning the front-end from Django to a Vue envirement, i worked on optimisation, refractoring and creating multiple new applications and features on the main project.</p><p>From refractoring the dynamic event app to creating a new subscription flow with stripe, this is only the tip of the iceberg.</p>",
         image: "src/assets/images/projects/jda.png",
         technologies:[
                 {
@@ -291,7 +293,7 @@ const projects = ref([
 
     {
         name: "My personal Portfolio",
-        description: "<p class='mb-6'>Well yes, this very website is made by.... ME! Surprise!</p><p class='mb-6'>The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.</p><p class='mb-6'> As for the contact form, i'm using EmailJS to receive the emails from my code.</p> <p class='mb-6'>This website is deployed and hosted with netlify</p>",
+        description: "<p class='mb-2'>Well yes, this very website is made by.... ME! Surprise!</p><p class='mb-2'>The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.</p><p class='mb-2'> As for the contact form, i'm using EmailJS to receive the emails from my code.</p> <p class='mb-6'>This website is deployed and hosted with netlify</p>",
         image: "src/assets/images/projects/portfolio.png",
         technologies:[
                 {
@@ -343,7 +345,7 @@ const projects = ref([
 
     {
         name: "Alfred Technologies",
-        description: "<p class='mb-6'>A website which serves as an initial introduction to the alfred management software. We used Vuejs and wordpress as a headless CMS.</p><p>I also added multiple new components created in the website to the UI-Kit used internally.</p>",
+        description: "<p class='mb-2'>A website which serves as an initial introduction to the alfred management software. We used Vuejs and wordpress as a headless CMS.</p><p>I also added multiple new components created in the website to the UI-Kit used internally.</p>",
         image: "src/assets/images/projects/alfred.png",
         technologies:[
                 {

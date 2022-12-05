@@ -1,3 +1,9 @@
 @import "variables";
 
-.page {}
+.page {
+    padding-left: toRem(50);
+
+    @media screen and (max-width: 768px) {
+        padding-left: 0rem;
+    }
+}

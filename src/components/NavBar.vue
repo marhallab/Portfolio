@@ -1,6 +1,7 @@
 <template>
-    <aside class="navbar">
-            <div class="h-auto flex justify-center items-center navbar__logo">MR</div>
+    <aside class="fixed h-full w-full">
+        <div  :class="openNav ? 'navbar h-full' : 'navbar -close h-full'">
+            <div class="h-1/6 md:h-auto flex justify-center items-center navbar__logo">MR</div>
             <nav class="h-4/6 flex flex-col justify-center items-center">
                 <router-link to="#first" class="navbar__item">
                     <HomeIcon/>
@@ -27,23 +28,30 @@
                     <p>Contact</p>
                 </router-link>
             </nav>
-            <div class="flex justify-center items-center" style="height:10%;">
+            <div class="flex justify-center items-center h-1/6">
                 <div class="navbar__arrow">
                     <ArrowDownIcon/>
                     <p>Scroll</p>
                 </div>
             </div>
+        </div>
+        <div class="navbar__opener" @click="openNav = !openNav"><MenuIcon/></div>
     </aside>
 
 </template>
 
 <script setup lang="ts">
-  import HomeIcon from "@/assets/icons/HomeIcon.vue"
-  import ArrowDownIcon from "@/assets/icons/ArrowDownIcon.vue"
-  import SkillIcon from "@/assets/icons/SkillIcon.vue"
-  import AboutIcon from "@/assets/icons/AboutIcon.vue"
-  import WorkIcon from "@/assets/icons/WorkIcon.vue"
-  import ProjectIcon from "@/assets/icons/ProjectIcon.vue"
-  import ContactIcon from "@/assets/icons/ContactIcon.vue"
+    import { ref } from 'vue';
+
+    import HomeIcon from "@/assets/icons/HomeIcon.vue"
+    import ArrowDownIcon from "@/assets/icons/ArrowDownIcon.vue"
+    import SkillIcon from "@/assets/icons/SkillIcon.vue"
+    import AboutIcon from "@/assets/icons/AboutIcon.vue"
+    import WorkIcon from "@/assets/icons/WorkIcon.vue"
+    import ProjectIcon from "@/assets/icons/ProjectIcon.vue"
+    import ContactIcon from "@/assets/icons/ContactIcon.vue"
+    import MenuIcon from "@/assets/icons/MenuIcon.vue"
+
+    var openNav = ref(true);
 
 </script>
