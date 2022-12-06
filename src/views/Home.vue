@@ -1,8 +1,8 @@
 <template>
     <main class="w-full">
         <div class="home page">
-            <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-16">
-                <img width="300" class="rounded-full home__portrait" src="@/assets/images/me.jpg" alt="">
+            <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-16" style="min-height:800px;">
+                <img width="300" class="rounded-full home__portrait" src="images/me.jpg" alt="">
                 <div class="lg:ml-28">
                     <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
                     <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
@@ -15,10 +15,10 @@
                         </div>
                         <div class="md:ml-12 flex">
                             <a href="https://github.com/marhallab">
-                                <img width="65" src="@/assets/images/socials/github.png" alt="Github logo">
+                                <img width="65" src="images/socials/github.png" alt="Github logo">
                             </a>
                             <a href="https://www.linkedin.com/in/marhallab/">
-                                <img class="ml-4" width="65" src="@/assets/images/socials/linkedin.png" alt="Linkedin Logo">
+                                <img class="ml-4" width="65" src="images/socials/linkedin.png" alt="Linkedin Logo">
                             </a>
                         </div>
                     </div>
@@ -144,82 +144,82 @@ var text = ref({
 const skills = ref([
     {
         name: "HTML 5",
-        icon: "src/assets/images/skills/html5.png"
+        icon: "images/skills/html5.png"
     },
 
     {
         name: "CSS 3",
-        icon: "src/assets/images/skills/css3.png"
+        icon: "images/skills/css3.png"
     },
 
     {
         name: "Javascript",
-        icon: "src/assets/images/skills/javascript.png"
+        icon: "images/skills/javascript.png"
     },
 
     {
         name: "VueJs (2 & 3)",
-        icon: "src/assets/images/skills/vuejs.png"
+        icon: "images/skills/vuejs.png"
     },
 
     {
         name: "Rest Api",
-        icon: "src/assets/images/skills/rest-api.png"
+        icon: "images/skills/rest-api.png"
     },
 
     {
         name: "JQuery",
-        icon: "src/assets/images/skills/jquery.png"
+        icon: "images/skills/jquery.png"
     },
 
     {
         name: "Django",
-        icon: "src/assets/images/skills/django.png"
+        icon: "images/skills/django.png"
     },
 
     {
         name: "Sass",
-        icon: "src/assets/images/skills/sass.png"
+        icon: "images/skills/sass.png"
     },
 
     {
         name: "Tailwind",
-        icon: "src/assets/images/skills/tailwind.png"
+        icon: "images/skills/tailwind.png"
     },
 
     {
         name: "Bootstrap",
-        icon: "src/assets/images/skills/bootstrap.png"
+        icon: "images/skills/bootstrap.png"
     },
 
     {
         name: "Git",
-        icon: "src/assets/images/skills/git.png"
+        icon: "images/skills/git.png"
     },
 
     {
         name: "Scrum",
-        icon: "src/assets/images/skills/sprint-iteration.png"
+        icon: "images/skills/sprint-iteration.png"
     },
 
     {
         name: "Seo",
-        icon: "src/assets/images/skills/seo.png"
+        icon: "images/skills/seo.png"
     },
 
     {
         name: "Wordpress",
-        icon: "src/assets/images/skills/wordpress.png"
+        icon: "images/skills/wordpress.png"
     },
 
     {
         name: "Responsive Design",
-        icon: "src/assets/images/skills/responsive-design.png"
+        icon: "images/skills/responsive-design.png"
     },
 
     {
         name: "Web Accessibility",
-        icon: "src/assets/images/skills/web-accessibility.png"
+        icon: "images/skills/web-accessibility.png"
     },
 
 ]);
@@ -241,49 +241,49 @@ const projects = ref([
     {
         name: "Journal de l'assurance",
         description: "<p class='mb-2'>JDA is a nation wide renowed information source for profesionnal in the insurance industrie.</p><p class='mb-2'>With the objectives of transitionning the front-end from Django to a Vue envirement, i worked on optimisation, refractoring and creating multiple new applications and features on the main project.</p><p>From refractoring the dynamic event app to creating a new subscription flow with stripe, this is only the tip of the iceberg.</p>",
-        image: "src/assets/images/projects/jda.png",
+        image: "images/projects/jda.png",
         technologies:[
                 {
                     name: "HTML 5",
-                    icon: "src/assets/images/skills/html5.png"
+                    icon: "images/skills/html5.png"
                 },
 
                 {
                     name: "CSS 3",
-                    icon: "src/assets/images/skills/css3.png"
+                    icon: "images/skills/css3.png"
                 },
                 {
                     name: "SASS",
-                    icon: "src/assets/images/skills/sass.png"
+                    icon: "images/skills/sass.png"
                 },
                 {
                     name: "JS",
-                    icon: "src/assets/images/skills/javascript.png"
+                    icon: "images/skills/javascript.png"
                 },
                 
                 {
                     name: "VUEJS",
-                    icon: "src/assets/images/skills/vuejs.png"
+                    icon: "images/skills/vuejs.png"
                 },
 
                 {
                     name: "JQUERY",
-                    icon: "src/assets/images/skills/jquery.png"
+                    icon: "images/skills/jquery.png"
                 },
 
                 {
                     name: "DJANGO",
-                    icon: "src/assets/images/skills/django.png"
+                    icon: "images/skills/django.png"
                 },
 
                 {
                     name: "RESPONSIVENESS",
-                    icon: "src/assets/images/skills/responsive-design.png"
+                    icon: "images/skills/responsive-design.png"
                 },
 
                 {
                     name: "Web Accessibility",
-                    icon: "src/assets/images/skills/web-accessibility.png"
+                    icon: "images/skills/web-accessibility.png"
                 },
 
         ],
@@ -294,48 +294,48 @@ const projects = ref([
     {
         name: "My personal Portfolio",
         description: "<p class='mb-2'>Well yes, this very website is made by.... ME! Surprise!</p><p class='mb-2'>The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.</p><p class='mb-2'> As for the contact form, i'm using EmailJS to receive the emails from my code.</p> <p class='mb-6'>This website is deployed and hosted with netlify</p>",
-        image: "src/assets/images/projects/portfolio.png",
+        image: "images/projects/portfolio.png",
         technologies:[
                 {
                     name: "HTML 5",
-                    icon: "src/assets/images/skills/html5.png"
+                    icon: "images/skills/html5.png"
                 },
                 {
                     name: "CSS 3",
-                    icon: "src/assets/images/skills/css3.png"
+                    icon: "images/skills/css3.png"
                 },
                 {
                     name: "SASS",
-                    icon: "src/assets/images/skills/sass.png"
+                    icon: "images/skills/sass.png"
                 },
                 {
                     name: "JS",
-                    icon: "src/assets/images/skills/javascript.png"
+                    icon: "images/skills/javascript.png"
                 },
 
                 {
                     name: "Tailwind",
-                    icon: "src/assets/images/skills/tailwind.png"
+                    icon: "images/skills/tailwind.png"
                 },
 
                 {
                     name: "VUEJS",
-                    icon: "src/assets/images/skills/vuejs.png"
+                    icon: "images/skills/vuejs.png"
                 },
 
                 {
                     name: "RESPONSIVENESS",
-                    icon: "src/assets/images/skills/responsive-design.png"
+                    icon: "images/skills/responsive-design.png"
                 },
 
                 {
                     name: "Seo",
-                    icon: "src/assets/images/skills/seo.png"
+                    icon: "images/skills/seo.png"
                 },
 
                 {
                     name: "Web Accessibility",
-                    icon: "src/assets/images/skills/web-accessibility.png"
+                    icon: "images/skills/web-accessibility.png"
                 },
 
         ],
@@ -346,31 +346,31 @@ const projects = ref([
     {
         name: "Alfred Technologies",
         description: "<p class='mb-2'>A website which serves as an initial introduction to the alfred management software. We used Vuejs and wordpress as a headless CMS.</p><p>I also added multiple new components created in the website to the UI-Kit used internally.</p>",
-        image: "src/assets/images/projects/alfred.png",
+        image: "images/projects/alfred.png",
         technologies:[
                 {
                     name: "HTML 5",
-                    icon: "src/assets/images/skills/html5.png"
+                    icon: "images/skills/html5.png"
                 },
                 {
                     name: "CSS 3",
-                    icon: "src/assets/images/skills/css3.png"
+                    icon: "images/skills/css3.png"
                 },
                 {
                     name: "SASS",
-                    icon: "src/assets/images/skills/sass.png"
+                    icon: "images/skills/sass.png"
                 },
                 {
                     name: "JS",
-                    icon: "src/assets/images/skills/javascript.png"
+                    icon: "images/skills/javascript.png"
                 },
                 {
                     name: "VUEJS",
-                    icon: "src/assets/images/skills/vuejs.png"
+                    icon: "images/skills/vuejs.png"
                 },
                 {
                     name: "RESPONSIVENESS",
-                    icon: "src/assets/images/skills/responsive-design.png"
+                    icon: "images/skills/responsive-design.png"
                 },
 
         ],

@@ -52,6 +52,6 @@
     import ContactIcon from "@/assets/icons/ContactIcon.vue"
     import MenuIcon from "@/assets/icons/MenuIcon.vue"
 
-    var openNav = ref(true);
+    var openNav = ref(false);
 
 </script>
