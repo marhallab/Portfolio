@@ -1,41 +1,45 @@
 <template>
-    <aside class="fixed h-full w-full">
-        <div  :class="openNav ? 'navbar h-full' : 'navbar -close h-full'">
-            <div class="h-1/6 md:h-auto flex justify-center items-center navbar__logo">MR</div>
-            <nav class="h-4/6 flex flex-col justify-center items-center">
-                <router-link to="#first" class="navbar__item">
-                    <HomeIcon/>
-                    <p>Home</p>
-                </router-link>
+    <aside>
+        <div class="fixed h-full">
+            <div  :class="openNav ? 'navbar h-full' : 'navbar -close h-full'">
+                <div class="h-1/6 md:h-auto flex justify-center items-center navbar__logo">MR</div>
+                <nav class="h-4/6 flex flex-col justify-center items-center">
+                    <router-link to="#first" class="navbar__item">
+                        <HomeIcon/>
+                        <p>Home</p>
+                    </router-link>
 
-                <router-link to="#about" class="navbar__item">
-                    <AboutIcon/>
-                    <p>About</p>
-                </router-link>
+                    <router-link to="#about" class="navbar__item">
+                        <AboutIcon/>
+                        <p>About</p>
+                    </router-link>
 
-                <router-link to="#skills" class="navbar__item">
-                    <SkillIcon/>
-                    <p>Skills</p>
-                </router-link>
+                    <router-link to="#skills" class="navbar__item">
+                        <SkillIcon/>
+                        <p>Skills</p>
+                    </router-link>
 
-                <router-link to="#projects" class="navbar__item">
-                    <ProjectIcon/>
-                    <p>Projects</p>
-                </router-link>
+                    <router-link to="#projects" class="navbar__item">
+                        <ProjectIcon/>
+                        <p>Projects</p>
+                    </router-link>
 
-                <router-link to="#contact" class="navbar__item">
-                    <ContactIcon/>
-                    <p>Contact</p>
-                </router-link>
-            </nav>
-            <div class="flex justify-center items-center h-1/6">
-                <div class="navbar__arrow">
-                    <ArrowDownIcon/>
-                    <p>Scroll</p>
+                    <router-link to="#contact" class="navbar__item">
+                        <ContactIcon/>
+                        <p>Contact</p>
+                    </router-link>
+                </nav>
+                <div class="flex justify-center items-center h-1/6">
+                    <div class="navbar__arrow">
+                        <ArrowDownIcon/>
+                        <p>Scroll</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="navbar__opener" @click="openNav = !openNav"><MenuIcon/></div>
+        <div class="fixed" style="top:0; right: 0">
+            <div class="navbar__opener" @click="openNav = !openNav"><MenuIcon/></div>
+        </div>
     </aside>
 
 </template>

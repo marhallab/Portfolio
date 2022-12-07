@@ -14,10 +14,10 @@
                             </router-link>
                         </div>
                         <div class="md:ml-12 flex">
-                            <a href="https://github.com/marhallab">
+                            <a href="https://github.com/marhallab" target="_blank" rel="noopener noreferrer">
                                 <img width="65" src="../../public/images/socials/github.png" alt="Github logo">
                             </a>
-                            <a href="https://www.linkedin.com/in/marhallab/">
+                            <a href="https://www.linkedin.com/in/marhallab/" target="_blank" rel="noopener noreferrer">
                                 <img class="ml-4" width="65" src="../../public/images/socials/linkedin.png" alt="Linkedin Logo">
                             </a>
                         </div>
@@ -75,17 +75,17 @@
                                 <div class="mt-6">
                                     <h3 class="uppercase text-xl underline font-black">Links :</h3>
                                     <div :class="idx % 2 == 0 ? 'flex justify-center lg:justify-start':'flex justify-center lg:justify-end'">
-                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.webLink">Live Site</a>
+                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.webLink" target="_blank" rel="noopener noreferrer">Live Site</a>
                                         <span v-if="project.webLink !== '' && project.repoLink !== ''" class="mx-4 font-black">|</span>
-                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.repoLink">Repo</a>
+                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.repoLink" target="_blank" rel="noopener noreferrer">Repo</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                 </div>
                 <div class="mb-28 text-center">
-                    <a href="" class="text-2xl w-auto uppercase color-primary font-black underline">
-                        Check my Githubfor more projects
+                    <a href="https://github.com/marhallab" class="text-2xl w-auto uppercase color-primary font-black underline" target="_blank" rel="noopener noreferrer">
+                        Check my Github for more projects
                     </a> 
                 </div>
             </section>
