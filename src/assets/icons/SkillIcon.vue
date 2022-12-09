@@ -1,5 +1,5 @@
 <template>
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="Capa_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="35.033px" height="35.033px" viewBox="0 0 35.033 35.033" style="enable-background:new 0 0 35.033 35.033;"
 	 xml:space="preserve">
 <g>
