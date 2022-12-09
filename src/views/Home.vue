@@ -94,7 +94,7 @@
                 <h2>Contact Me</h2>
                 <div class="flex flex-col items-center lg:items-start lg:flex-row mb-16 px-8 py-8 bg-white rounded-3xl mx-auto">
                     <div class="w-full lg:w-1/2">
-                        <form ref="formContact" @submit.prevent="sendMail" class="space-y-8">
+                        <!-- <form ref="formContact" @submit.prevent="sendMail" class="space-y-8">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-bold">Your email</label>
                                 <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@medrhallab.com" required>
@@ -114,7 +114,7 @@
                                 </svg>
                                 <div v-else>{{text.buttonSend}}</div>
                             </button>
-                        </form>
+                        </form> -->
                     </div>
                     <div class="mt-12 lg:w-1/2 lg:ml-12 lg:mt-0">
                         <p>If you have any more questions, feel free to contact me!</p>
