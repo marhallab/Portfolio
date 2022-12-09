@@ -8,7 +8,7 @@
                     <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
                        <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
                         <div class="flex">
-                            <a href="../../public/cvs/cv-en-medrhallab.pdf" target="_blank" class="button">RESUME</a>
+                            <a href="../../public/cvs/cv-en-medrhallab.pdf" download target="_blank" class="button">RESUME</a>
                             <router-link to="#contact" class="ml-4 button">
                                 Contact
                             </router-link>
