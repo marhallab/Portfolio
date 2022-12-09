@@ -2,23 +2,23 @@
     <main class="w-full">
         <div class="home page">
             <section id="first" class="text-center flex flex-col px-8 lg:text-start lg:flex-row justify-center items-center h-screen lg:px-16" style="min-height:800px;">
-                <img width="300" class="rounded-full home__portrait" src="images/me.jpg" alt="">
+                <img width="300" class="rounded-full home__portrait" src="/images/me.jpg" alt="">
                 <div class="lg:ml-28">
                     <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
                     <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
                        <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
                         <div class="flex">
-                            <a href="cvs/cv-en-medrhallab.pdf" target="_blank" class="button">RESUME</a>
+                            <a href="/cvs/cv-en-medrhallab.pdf" target="_blank" class="button">RESUME</a>
                             <router-link to="#contact" class="ml-4 button">
                                 Contact
                             </router-link>
                         </div>
                         <div class="md:ml-12 flex">
                             <a href="https://github.com/marhallab" target="_blank" rel="noopener noreferrer">
-                                <img width="65" src="images/socials/github.png" alt="Github logo">
+                                <img width="65" src="/images/socials/github.png" alt="Github logo">
                             </a>
                             <a href="https://www.linkedin.com/in/marhallab/" target="_blank" rel="noopener noreferrer">
-                                <img class="ml-4" width="65" src="images/socials/linkedin.png" alt="Linkedin Logo">
+                                <img class="ml-4" width="65" src="/images/socials/linkedin.png" alt="Linkedin Logo">
                             </a>
                         </div>
                     </div>
