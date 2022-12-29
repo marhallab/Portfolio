@@ -1,0 +1,27 @@
+export const en = {
+
+    home: 'Home',
+    about: 'About',
+    skills: 'Skills',
+    projects: 'Projects',
+    contact: 'Contact',
+    scroll: 'Scroll',
+    uvp1: 'A frontend developer who specialize on',
+    uvp2: 'top-notch interactive and responsive front-end websites and application',
+    resume: 'CV',
+    aboutMe: 'About me:',
+    aboutSection: '<p> Hello world! my name is <span id="name" class="font-black whitespace-nowrap m-0 inline-block color-primary lg:w-48">Mohamed Rhallab</span> </p> <br><p> My years of experience as a front-end developer has given me strong foundation for<span class="font-bold color-primary"> building accessible & user-friendly</span> websites and applications.</p> <br><p>I had the chance to<span class="font-bold color-primary"> work in different enviroments</span> (as a solo dev, in a team of devs or handling the entirety of the front-end on my own) and on differents compagnies types (<span class="font-bold color-primary">web agency & Saas</span>) which has given me a 360-view on the works of a web developer.</p><br><p>I am passionate about coding and solving problems through code, and I am excited to work with you!</p>',
+    mySkills: 'My skills:',
+    myProjects: 'Projects i worked on:',
+    links: 'Links :',
+    madeWith: 'Made with:',
+    liveSite: 'Live Site',
+    repo: 'Repo',
+    checkGitHub: 'Check my Github for more projects',
+    contactMe: 'Contact me:',
+    yourEmail: 'Your email',
+    yourName: 'Your name',
+    yourMessage: 'Your message',
+    contactSection: "<p>If you have any more questions, feel free to contact me!</p><br><p> I'm available to talk about your project or work and see if we can be a fit for each other!</p><br><p>Straight shot to my inbox: <a href='mailto:rhallab.dev{'@'}gmail.com' class='home__link -email font-black color-primary'>rhallab.dev{'@'}gmail.com</a></p>",
+
+}   

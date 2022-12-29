@@ -6,33 +6,33 @@
                 <nav class="h-4/6 flex flex-col justify-center items-center">
                     <router-link to="#first" class="navbar__item">
                         <HomeIcon/>
-                        <p>Home</p>
+                        <p>{{$t('message.home')}}</p>
                     </router-link>
 
                     <router-link to="#about" class="navbar__item">
                         <AboutIcon/>
-                        <p>About</p>
+                        <p>{{$t('message.about')}}</p>
                     </router-link>
 
                     <router-link to="#skills" class="navbar__item">
                         <SkillIcon/>
-                        <p>Skills</p>
+                        <p>{{$t('message.skills')}}</p>
                     </router-link>
 
                     <router-link to="#projects" class="navbar__item">
                         <ProjectIcon/>
-                        <p>Projects</p>
+                        <p>{{$t('message.projects')}}</p>
                     </router-link>
 
                     <router-link to="#contact" class="navbar__item">
                         <ContactIcon/>
-                        <p>Contact</p>
+                        <p>{{$t('message.contact')}}</p>
                     </router-link>
                 </nav>
                 <div class="flex justify-center items-center h-1/6">
                     <div class="navbar__arrow">
                         <ArrowDownIcon/>
-                        <p>Scroll</p>
+                        <p>{{$t('message.scroll')}}</p>
                     </div>
                 </div>
             </div>

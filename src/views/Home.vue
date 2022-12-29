@@ -5,12 +5,12 @@
                 <img width="300" class="rounded-full home__portrait" src="/images/me.jpg" alt="">
                 <div class="lg:ml-28">
                     <div id="text" class="font-black text-3xl whitespace-nowrap m-0 inline-block color-primary my-8 mt-16 lg:w-72 lg:text-5xl uppercase ">MOHAMED RHALLAB</div>
-                    <div class="max-w-3xl h-52 text-2xl md:h-fit">A frontend developer who specialize on <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> top-notch interactive and responsive front-end websites and application</div>
+                    <div class="max-w-3xl h-52 text-2xl md:h-fit">{{ $t("message.uvp1") }} <VueTyper class="home__headertext" :text='text.typerHeader' :pre-erase-delay=3000 /> {{ $t("message.uvp2") }}</div>
                        <div class="flex flex-col justify-center items-center md:mt-6 md:flex-row  lg:justify-start">
                         <div class="flex">
-                            <a href="/cvs/cv-en-medrhallab.pdf" target="_blank" class="button">RESUME</a>
+                            <a :href=" isEn ? '/cvs/cv-en-medrhallab.pdf' : '/cvs/cv-fr-medrhallab.pdf'" target="_blank" class="button">{{ $t("message.resume") }}</a>
                             <router-link to="#contact" class="ml-4 button">
-                                Contact
+                                {{ $t("message.contact") }}
                             </router-link>
                         </div>
                         <div class="md:ml-12 flex">
@@ -26,26 +26,12 @@
             </section>
 
             <section id="about" class="my-28 px-6 lg:px-16">
-                <h2 id="test">About me</h2>
-                <div class="px-8 py-8 bg-white rounded-3xl">
-                    <p class="">
-                        Hello world! my name is <span id="name" class="font-black whitespace-nowrap m-0 inline-block color-primary lg:w-48">Mohamed Rhallab</span>
-                    </p>
-                    <br>
-                    <p> My years of experience as a front-end developer has given me strong foundation for<span class="font-bold color-primary"> building accessible & user-friendly</span> websites and applications.
-                    </p>
-                    <br>
-                    <p>
-                        I had the chance to<span class="font-bold color-primary"> work in different enviroments</span> (as a solo dev, in a team of devs or handling the entirety of the front-end on my own) and on differents compagnies types (<span class="font-bold color-primary">web agency & Saas</span>) which 
-                        has given me a 360-view on the works of a web developer. 
-                    </p>
-                    <br>
-                    <p>I am passionate about coding and solving problems through code, and I am excited to work with you!</p>
-                </div>
+                <h2 id="test">{{ $t("message.aboutMe") }}</h2>
+                <div class="px-8 py-8 bg-white rounded-3xl" v-html="$t('message.aboutSection')"></div>
             </section>
 
             <section id="skills" class="my-28 px-6 lg:px-16">
-                <h2>My skills</h2>
+                <h2>{{$t('message.mySkills')}}</h2>
                 <div class="px-8 py-8 bg-white rounded-3xl">
                     <div class="flex flex-wrap justify-center items-center">
                         <div class="home__skill flex flex-col justify-center items-center" v-for="(skill, idx) in skills" :key="idx">
@@ -57,7 +43,7 @@
             </section>
 
             <section id="projects" class="my-28 px-6 lg:px-16">
-                <h2>Projects i worked on:</h2>
+                <h2>{{$t('message.myProjects')}}</h2>
                 <div class="mb-16 px-8 py-8 bg-white rounded-3xl" v-for="(project, idx) in projects" :key="idx">
                         <div :class="idx % 2 == 0 ? 'flex flex-col justify-between items-center text-center lg:text-start lg:flex-row':'flex flex-col justify-between items-center text-center lg:text-end lg:flex-row-reverse'">
                             <img :class="idx % 2 == 0 ? 'w-full lg:mr-8 lg:w-5/12' : 'w-full lg:ml-8 lg:w-5/12'" :src="project.image" :alt="project.name">
@@ -65,7 +51,7 @@
                                 <h2 class="font-black">{{project.name}}</h2>
                                 <div v-html="project.description"></div>
                                 <div class="mt-6">
-                                    <h3 class="uppercase text-xl underline font-black">Made with :</h3>
+                                    <h3 class="uppercase text-xl underline font-black">{{$t('message.madeWith')}}</h3>
                                     <ul :class="idx % 2 == 0 ? 'flex flex-wrap justify-center lg:justify-start':'flex flex-wrap justify-center lg:justify-end'">
                                         <li v-for="(techno, idx) in project.technologies" :key="idx" class="flex flex-col justify-center items-center">
                                             <img width="50" :src="techno.icon" :alt="techno.name">
@@ -73,11 +59,11 @@
                                     </ul>
                                 </div>
                                 <div class="mt-6">
-                                    <h3 class="uppercase text-xl underline font-black">Links :</h3>
+                                    <h3 class="uppercase text-xl underline font-black">{{$t('message.links')}}</h3>
                                     <div :class="idx % 2 == 0 ? 'flex justify-center lg:justify-start':'flex justify-center lg:justify-end'">
-                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.webLink" target="_blank" rel="noopener noreferrer">Live Site</a>
+                                        <a v-if="project.webLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.webLink" target="_blank" rel="noopener noreferrer">{{$t('message.liveSite')}}</a>
                                         <span v-if="project.webLink !== '' && project.repoLink !== ''" class="mx-4 font-black">|</span>
-                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.repoLink" target="_blank" rel="noopener noreferrer">Repo</a>
+                                        <a v-if="project.repoLink !== ''" class="uppercase text-xl font-bold home__link" :href="project.repoLink" target="_blank" rel="noopener noreferrer">{{$t('message.repo')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -85,26 +71,26 @@
                 </div>
                 <div class="mb-28 text-center">
                     <a href="https://github.com/marhallab" class="text-2xl w-auto uppercase color-primary font-black underline" target="_blank" rel="noopener noreferrer">
-                        Check my Github for more projects
+                        {{$t('message.checkGitHub')}}
                     </a> 
                 </div>
             </section>
 
             <section id="contact" class="my-28 px-6 lg:px-16">
-                <h2>Contact Me</h2>
+                <h2>{{$t('message.contactMe')}}</h2>
                 <div class="flex flex-col items-center lg:items-start lg:flex-row mb-16 px-8 py-8 bg-white rounded-3xl mx-auto">
                     <div class="w-full lg:w-1/2">
                         <form ref="formContact" @submit.prevent="sendMail" class="space-y-8">
                             <div>
-                                <label for="email" class="block mb-2 text-sm font-bold">Your email</label>
+                                <label for="email" class="block mb-2 text-sm font-bold">{{$t('message.yourEmail')}}</label>
                                 <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@medrhallab.com" required>
                             </div>
                             <div>
-                                <label for="subject" class="block mb-2 text-sm font-bold">Your name</label>
+                                <label for="subject" class="block mb-2 text-sm font-bold">{{$t('message.yourName')}}</label>
                                 <input type="text" id="subject" name="name" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Med Rhallab" required>
                             </div>
                             <div class="sm:col-span-2">
-                                <label for="message" class="block mb-2 text-sm font-bold">Your message</label>
+                                <label for="message" class="block mb-2 text-sm font-bold">{{$t('message.yourMessage')}}</label>
                                 <textarea id="message" rows="6" name="message" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Let me know how i can help you" required></textarea>
                             </div>
                             <button type="submit" class="py-3 px-5 text-sm font-bold text-center button flex justify-center items-center" style="width:200px; height:50px;">
@@ -116,13 +102,7 @@
                             </button>
                         </form>
                     </div>
-                    <div class="mt-12 lg:w-1/2 lg:ml-12 lg:mt-0">
-                        <p>If you have any more questions, feel free to contact me!</p>
-                        <br>
-                        <p> I'm available to talk about your project or work and see if we can be a fit for each other!</p>
-                        <br>
-                        <p>Straight shot to my inbox: <a href="mailto:rhallab.dev@gmail.com" class="home__link -email font-black color-primary">rhallab.dev@gmail.com</a></p>
-                    </div>
+                    <div class="mt-12 lg:w-1/2 lg:ml-12 lg:mt-0" v-html="$t('message.contactSection')"></div>
                 </div>
             </section>
 
@@ -136,11 +116,13 @@ import { onMounted, ref } from 'vue';
 import { scrambleSelector } from '@/static/scripts/Scrambler.js';
 import emailjs from 'emailjs-com';
 
+var isEn = navigator.languages[0].includes("en");
+
 var text = ref({
-    header: "A Frontend focused Web Developer who specialize on <VueTyper :text='textTyperHeader' :shuffle=true /> top-notch interactif and responsive front-end websites and applications",
-    typerHeader: ['creating', 'building','maintaining'],
-    buttonSend: "Send Message"
+    typerHeader: isEn ? ['creating', 'building','maintaining'] : ['créer','construire','maintenir'],
+    buttonSend: isEn ? "Send Message" : "Envoyer le message",
 });
+
 const skills = ref([
     {
         name: "HTML 5",
@@ -223,21 +205,8 @@ const skills = ref([
     },
 
 ]);
-const projects = ref([
-    // {
-    //     name: "",
-    //     description: "",
-    //     image: "",
-    //     technologies:[
-    //         {
-    //             name: "",
-    //             icon: ""
-    //         },
-    //     ],
-    //     webLink: "",
-    //     repoLink:"",
-    // },
 
+const projects = ref([
     {
         name: "Journal de l'assurance",
         description: "<p class='mb-2'>JDA is a nation wide renowed information source for profesionnal in the insurance industrie.</p><p class='mb-2'>With the objectives of transitionning the front-end from Django to a Vue envirement, i worked on optimisation, refractoring and creating multiple new applications and features on the main project.</p><p>From refractoring the dynamic event app to creating a new subscription flow with stripe, this is only the tip of the iceberg.</p>",
@@ -378,19 +347,18 @@ const projects = ref([
         repoLink:""
     }
 ]);
-const formContact = ref(null);
+
 var sendingMessage = ref(false);
-
-
+const formContact = ref(null);
 const sendMail = () => {
         sendingMessage.value = true;
         emailjs.sendForm('service_b8lgk5a', 'template_8bhh8gr', formContact.value, 'CP2MistUV8Pzm9j0s')
         .then(() => {
             sendingMessage.value = false;
-            text.value.buttonSend = "Message sent"
+            text.value.buttonSend = isEn ? "Message sent" : "Message envoyé"
         }, () => {
             sendingMessage.value = false;
-            text.value.buttonSend = "Message wasn't sent"
+            text.value.buttonSend = isEn ? "Message wasn't sent" : "Le message n'a pas été envoyé"
 
         }); 
       };
