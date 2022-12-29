@@ -119,7 +119,7 @@ import emailjs from 'emailjs-com';
 var isEn = navigator.languages[0].includes("en");
 
 var text = ref({
-    typerHeader: isEn ? ['creating', 'building','maintaining'] : ['créer','construire','maintenir'],
+    typerHeader: isEn ? ['creating', 'building','maintaining'] : ['création','construction','maintenance'],
     buttonSend: isEn ? "Send Message" : "Envoyer le message",
 });
 

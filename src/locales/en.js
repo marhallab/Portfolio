@@ -7,7 +7,7 @@ export const en = {
     contact: 'Contact',
     scroll: 'Scroll',
     uvp1: 'A frontend developer who specialize on',
-    uvp2: 'top-notch interactive and responsive front-end websites and application',
+    uvp2: 'top-notch interactive and responsive front-end websites and applications.',
     resume: 'CV',
     aboutMe: 'About me:',
     aboutSection: '<p> Hello world! my name is <span id="name" class="font-black whitespace-nowrap m-0 inline-block color-primary lg:w-48">Mohamed Rhallab</span> </p> <br><p> My years of experience as a front-end developer has given me strong foundation for<span class="font-bold color-primary"> building accessible & user-friendly</span> websites and applications.</p> <br><p>I had the chance to<span class="font-bold color-primary"> work in different enviroments</span> (as a solo dev, in a team of devs or handling the entirety of the front-end on my own) and on differents compagnies types (<span class="font-bold color-primary">web agency & Saas</span>) which has given me a 360-view on the works of a web developer.</p><br><p>I am passionate about coding and solving problems through code, and I am excited to work with you!</p>',
