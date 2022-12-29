@@ -1,5 +1,5 @@
 <template>
-    <aside>
+    <aside style="z-index:1;">
         <div class="fixed h-full">
             <div  :class="openNav ? 'navbar h-full' : 'navbar -close h-full'">
                 <div class="h-1/6 md:h-auto flex justify-center items-center navbar__logo">MR</div>
