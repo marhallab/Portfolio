@@ -15,8 +15,13 @@ export const mySkills = [
     },
 
     {
-        name: "VueJs (2 & 3)",
+        name: "Vue.js (2 & 3)",
         icon: "images/skills/vuejs.png"
+    },
+
+    {
+        name: "React.js",
+        icon: "images/skills/reactjs.png"
     },
 
     {
