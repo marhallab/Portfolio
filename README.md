@@ -5,3 +5,5 @@ The website is done with Vue 3, using vitejs. I had some fun using mutiple exter
 As for the contact form, i'm using EmailJS to receive the emails from my code.
 
 This website is deployed and hosted with netlify
+
+https://medrhallab.com/
