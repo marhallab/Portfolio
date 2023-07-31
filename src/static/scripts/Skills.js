@@ -20,8 +20,23 @@ export const mySkills = [
     },
 
     {
+        name: "Nuxt.js",
+        icon: "images/skills/nuxtjs.png"
+    },
+
+    {
+        name: "Quasar",
+        icon: "https://cdn.quasar.dev/logo-v2/svg/logo.svg"
+    },
+
+    {
         name: "React.js",
         icon: "images/skills/reactjs.png"
+    },
+
+    {
+        name: "Node.js",
+        icon: "images/skills/nodejs.png"
     },
 
     {
@@ -83,5 +98,7 @@ export const mySkills = [
         name: "Web Accessibility",
         icon: "images/skills/web-accessibility.png"
     },
+
+    
 
 ]
