@@ -1,9 +1,9 @@
 # My website
 
-The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.
+The website is done with Vue 3, using vitejs.
 
-As for the contact form, i'm using EmailJS to receive the emails from my code.
+As for the contact form, i'm using EmailJS to receive the emails.
 
-This website is deployed and hosted with netlify
+This website is deployed and hosted with netlify.
 
 https://medrhallab.com/
