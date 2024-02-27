@@ -1,4 +1,4 @@
-# My portfolio
+# My website
 
 The website is done with Vue 3, using vitejs. I had some fun using mutiple external js libraries for some cool visuel effects.
 
