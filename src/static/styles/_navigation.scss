@@ -184,3 +184,30 @@
         }
     }
 }
+
+.navbarnormal{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border-radius: 10rem;
+    a{
+        display: flex;
+        background-color: red;
+        padding: 1rem;
+        align-items: center;
+        border-radius: 10rem;
+        width: 100%;
+        max-width: 150px;
+    }
+    svg{
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+    }
+}

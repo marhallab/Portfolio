@@ -1,11 +1,10 @@
 <script setup>
-  import NavBar from "@/components/NavBar.vue"
-
+import NavBarNormal from "@/components/NavBarNormal.vue";
 </script>
 
 <template>
   <div class="flex">
-    <NavBar/>
+    <NavBarNormal />
     <router-view class="page"></router-view>
   </div>
 </template>
