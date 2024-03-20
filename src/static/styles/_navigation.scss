@@ -1,213 +1,204 @@
 @import "variables", "functions";
 
-.navbar {
+.navbar-mobile {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  width: 8.5rem;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: $primary;
+
+  @media screen and (max-width: 675px) {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 20rem;
+    height: 100%;
+    transition: 0.1s width ease-in;
 
-    position: absolute;
-    width: 8.5rem;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    color: white;
-    background-color: $primary;
-    transition: 0.25s width ease-in;
-
-
-    @media screen and (max-width: 768px) {
-        width: 20rem;
-        height: 100%;
-        transition: 0.25s width ease-in;
-
-        .navbar__item {
-            p {
-                display: block;
-            }
-        }
-
-        .navbar__arrow {
-            p {
-                display: block;
-            }
-        }
-
-        &.-close {
-            width: 0rem;
-            transition: 0.25s width ease-in;
-
-            .navbar__item {
-                p {
-                    display: none;
-                }
-            }
-
-            .navbar__arrow {
-                p {
-                    display: none;
-                }
-            }
-
-            .navbar__logo {
-                display: none;
-            }
-
-            svg {
-                display: none;
-            }
-        }
+    .navbar-mobile__item {
+      transition: 0.1s opacity ease-in;
+      opacity: 1;
     }
 
-    @media screen and (max-width: 425px) {
-        width: 20rem;
+    .navbar-mobile__arrow {
+      transition: 0.1s opacity ease-in;
+      opacity: 1;
     }
 
+    &.-close {
+      width: 0rem;
+      transition: 0.25s width ease-in;
+
+      .navbar-mobile__item {
+        opacity: 0;
+        transition: 0.1s opacity ease-in;
+      }
+
+      .navbar-mobile__arrow {
+        opacity: 0;
+        transition: 0.1s opacity ease-in;
+      }
+
+      .navbar-mobile__logo {
+        opacity: 0;
+        transition: 0.1s opacity ease-in;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 20rem;
+  }
+
+  &__item {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+
+    & + & {
+      margin-top: 1rem;
+    }
 
     &:hover {
-        width: 25rem;
-        transition: 0.25s width ease-in;
-
-        .navbar__item {
-            p {
-                display: block;
-            }
-        }
-
-        .navbar__arrow {
-            p {
-                display: block;
-            }
-        }
-
-
-        @media screen and (max-width: 768px) {
-            width: 20rem;
-
-            .navbar__item {
-                p {
-                    display: block;
-                }
-            }
-
-            .navbar__arrow {
-                p {
-                    display: block;
-                }
-            }
-        }
-
-        @media screen and (max-width: 425px) {
-            width: 20rem;
-        }
+      box-shadow: rgba(0, 0, 0, 0.35) 0 toRem(5) toRem(15);
     }
 
-    &__item {
-        width: 70%;
-        display: flex;
-        align-items: center;
-        padding: 1rem;
-        cursor: pointer;
-        margin-left: 1rem;
+    svg {
+      width: 2rem;
+      min-width: 2rem;
+      fill: white;
+    }
 
-        &+& {
-            margin-top: 1rem;
-        }
+    p {
+      margin-left: 1rem;
+      text-transform: uppercase;
+      font-family: "Lato";
+      font-weight: 700;
+    }
+  }
 
-        &:hover {
-            box-shadow: rgba(0, 0, 0, 0.35) 0 toRem(5) toRem(15);
-        }
+  &__logo {
+    font-size: toRem(40);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 toRem(5) toRem(15);
+    padding: 2rem 0rem;
+    background-color: $primary-dark;
+  }
 
+  &__arrow {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    padding: 0.5rem;
+    margin-left: 1.25rem;
+
+    svg {
+      width: 3rem;
+      min-width: 3rem;
+      height: 4rem;
+      min-height: 4rem;
+    }
+
+    p {
+      display: none;
+      font-family: "Lato";
+      font-weight: 700;
+    }
+  }
+
+  &__opener {
+    display: none;
+
+    @media screen and (max-width: 675px) {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: black;
+
+      svg {
+        fill: $primary;
+      }
+
+      @media screen and (max-width: 350px) {
         svg {
-            width: 2rem;
-            min-width: 2rem;
-            fill: white;
+          fill: $primary;
         }
-
-        p {
-            margin-left: 1rem;
-            text-transform: uppercase;
-            display: none;
-            font-family: "Lato";
-            font-weight: 700;
-        }
-
+      }
     }
-
-    &__logo {
-        font-size: toRem(40);
-        box-shadow: rgba(0, 0, 0, 0.5) 0 toRem(5) toRem(15);
-        padding: 2rem 0rem;
-        background-color: $primary-dark;
-    }
-
-    &__arrow {
-        display: flex;
-        align-items: center;
-        width: 70%;
-        padding: 0.5rem;
-        margin-left: 1.25rem;
-
-        svg {
-            width: 3rem;
-            min-width: 3rem;
-            height: 4rem;
-            min-height: 4rem;
-        }
-
-        p {
-            display: none;
-            font-family: "Lato";
-            font-weight: 700;
-        }
-    }
-
-    &__opener {
-        display: none;
-
-        @media screen and (max-width: 768px) {
-            display: block;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: black;
-
-            svg {
-                fill: $primary
-            }
-
-            @media screen and (max-width: 350px) {
-                svg {
-                    fill: $primary
-                }
-            }
-
-        }
-    }
+  }
 }
 
-.navbarnormal{
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid $primary;
+  max-width: 750px;
+  width: 100%;
+  margin: auto;
+  padding: 0.75rem;
+  backdrop-filter: blur(10px);
+  border-radius: 10rem;
+  transition: top 0.3s;
+  z-index: 1;
+
+  @media screen and (max-width: 675px) {
+    display: none;
+  }
+
+  &__item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 0.5rem;
     align-items: center;
-    border: 1px solid black;
-    max-width: 750px;
-    width: 100%;
-    margin: auto;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
     border-radius: 10rem;
-    a{
-        display: flex;
-        background-color: red;
-        padding: 1rem;
-        align-items: center;
-        border-radius: 10rem;
-        width: 100%;
-        max-width: 150px;
+    width: 100%;
+    max-width: 140px;
+    transition: 0.3s;
+
+    svg {
+      g {
+        fill: black;
+      }
     }
-    svg{
-        width: 10px;
-        height: 10px;
-        margin-right: 10px;
+
+    &:hover {
+      background-color: $primary;
+      color: white;
+
+      svg {
+        fill: white;
+        g {
+          fill: white;
+        }
+      }
     }
+
+    &.-active {
+      background-color: $primary;
+      color: white;
+
+      svg {
+        fill: white;
+        g {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  svg {
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+  }
 }

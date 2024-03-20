@@ -1,7 +1,7 @@
 export const fr = {
   home: "Accueil",
   about: "À&nbsp;propos",
-  skills: "Compétences",
+  skills: "Skills",
   projects: "Projets",
   contact: "Contacter",
   scroll: "Faire défiler",

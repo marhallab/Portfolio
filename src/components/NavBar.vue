@@ -1,61 +1,89 @@
 <template>
-    <aside style="z-index:1;">
-        <div class="fixed h-full">
-            <div  :class="openNav ? 'navbar h-full' : 'navbar -close h-full'">
-                <div class="h-1/6 md:h-auto flex justify-center items-center navbar__logo">MR</div>
-                <nav class="h-4/6 flex flex-col justify-center items-center">
-                    <router-link to="#first" class="navbar__item">
-                        <HomeIcon/>
-                        <p>{{$t('message.home')}}</p>
-                    </router-link>
+  <nav
+    id="navbar"
+    class="navbar fixed w-auto inset-x-0"
+    :style="{ top: navbarTop }"
+  >
+    <router-link
+      to="#first"
+      class="navbar__item"
+      :class="{ ' -active': activeSection === 'first' }"
+    >
+      <HomeIcon />
+      <p>{{ $t("message.home") }}</p>
+    </router-link>
 
-                    <router-link to="#about" class="navbar__item">
-                        <AboutIcon/>
-                        <p>{{$t('message.about')}}</p>
-                    </router-link>
+    <router-link
+      to="#about"
+      class="navbar__item"
+      :class="{ ' -active': activeSection === 'about' }"
+    >
+      <AboutIcon />
+      <p v-html="$t('message.about')"></p>
+    </router-link>
 
-                    <router-link to="#skills" class="navbar__item">
-                        <SkillIcon/>
-                        <p>{{$t('message.skills')}}</p>
-                    </router-link>
+    <router-link
+      to="#skills"
+      class="navbar__item"
+      :class="{ ' -active': activeSection === 'skills' }"
+    >
+      <SkillIcon />
+      <p>{{ $t("message.skills") }}</p>
+    </router-link>
 
-                    <router-link to="#projects" class="navbar__item">
-                        <ProjectIcon/>
-                        <p>{{$t('message.projects')}}</p>
-                    </router-link>
+    <router-link
+      to="#projects"
+      class="navbar__item"
+      :class="{ ' -active': activeSection === 'projects' }"
+    >
+      <ProjectIcon />
+      <p>{{ $t("message.projects") }}</p>
+    </router-link>
 
-                    <router-link to="#contact" class="navbar__item">
-                        <ContactIcon/>
-                        <p>{{$t('message.contact')}}</p>
-                    </router-link>
-                </nav>
-                <div class="flex justify-center items-center h-1/6">
-                    <div class="navbar__arrow">
-                        <ArrowDownIcon/>
-                        <p>{{$t('message.scroll')}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="fixed" style="top:0; right: 0">
-            <div class="navbar__opener" @click="openNav = !openNav"><MenuIcon/></div>
-        </div>
-    </aside>
-
+    <router-link
+      to="#contact"
+      class="navbar__item"
+      :class="{ ' -active': activeSection === 'contact' }"
+    >
+      <ContactIcon />
+      <p>{{ $t("message.contact") }}</p>
+    </router-link>
+  </nav>
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from "vue";
 
-    import HomeIcon from "@/assets/icons/HomeIcon.vue"
-    import ArrowDownIcon from "@/assets/icons/ArrowDownIcon.vue"
-    import SkillIcon from "@/assets/icons/SkillIcon.vue"
-    import AboutIcon from "@/assets/icons/AboutIcon.vue"
-    import WorkIcon from "@/assets/icons/WorkIcon.vue"
-    import ProjectIcon from "@/assets/icons/ProjectIcon.vue"
-    import ContactIcon from "@/assets/icons/ContactIcon.vue"
-    import MenuIcon from "@/assets/icons/MenuIcon.vue"
+import HomeIcon from "@/assets/icons/HomeIcon.vue";
+import ArrowDownIcon from "@/assets/icons/ArrowDownIcon.vue";
+import SkillIcon from "@/assets/icons/SkillIcon.vue";
+import AboutIcon from "@/assets/icons/AboutIcon.vue";
+import WorkIcon from "@/assets/icons/WorkIcon.vue";
+import ProjectIcon from "@/assets/icons/ProjectIcon.vue";
+import ContactIcon from "@/assets/icons/ContactIcon.vue";
+import MenuIcon from "@/assets/icons/MenuIcon.vue";
+import { init } from "emailjs-com";
 
-    var openNav = ref(false);
+var openNav = ref(false);
+var navbarTop = ref("1.75rem");
+const activeSection = ref(null);
 
+// Hooks
+onMounted(() => {
+  initNavbar();
+});
+
+// Function
+const initNavbar = () => {
+  let prevScrollpos = window.pageYOffset;
+  window.addEventListener("scroll", function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      navbarTop.value = "1.75rem";
+    } else {
+      navbarTop.value = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  });
+};
 </script>
